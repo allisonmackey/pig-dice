@@ -3,7 +3,7 @@
 function Player () {
   this.playerName = "";
   this.totalScore = 0;
-  this.turnScore = [];
+  this.turnScore = 0;
 };
 
 Player.prototype.rollDice = function() {
@@ -12,10 +12,12 @@ Player.prototype.rollDice = function() {
   // var total = num + num1; 
   var random = Math.floor(Math.random() * 6) + 1;
   if (random === 1) {
-    this.turnScore = [];  // might need to be refactored once we have multi-player option
+    this.turnScore = 0;  
+  } else if (this.turnScore >= 21) {
+    return alert("You Win!")
   } else if (random !== 1) {
-    this.turnScore.push(random);
-  }
+    this.turnScore += random;
+  } 
   // if (total >= 3)  // goal is to only run this if the player hits "hold button"
   //   totalScore = total;
   // }
@@ -28,19 +30,24 @@ Player.prototype.rollDice = function() {
 
 // "Hold Button" Method --> Adds to the total score
 Player.prototype.sumScore = function(){
-  for (var i = 0; i <= this.turnScore; i ++) {
-    var num = this.turnScore[i];
-    var total = num + this.totalScore
-    this.totalScore = total; 
-  }
-  console.log("total score", this.totalScore);
-  return 
+  var total = this.totalScore;
+  var roll = this.this.turnScore;
+    total += roll;
+};
+  
+  // for (var i = 0; i <= this.turnScore; i ++) {
+  //   var num = this.turnScore[i];
+  //   var total = num + this.totalScore
+  //   this.totalScore = total; 
+  // }
+  // console.log("total score", this.totalScore);
+  // return 
 
   // this.turnScore.forEach(function(num){
   //   this.totalScore = this.totalScore + num;
   // });
    
-}
+// }
 //   var random = Math.floor(Math.random() * 5) + 1;
 //   var num = random; 
 //   var num1 = parseInt(this.turnScore);
