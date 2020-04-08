@@ -12,18 +12,16 @@ Player.prototype.rollDice = function() {
   // var total = num + num1; 
   var random = Math.floor(Math.random() * 6) + 1;
   if (random === 1) {
-    this.turnScore = 0;  
+    this.turnScore = 0;
+      
   } else if (this.turnScore >= 21) {
+    this.turnScore = 0;
     return alert("You Win!")
+
   } else if (random !== 1) {
     this.turnScore += random;
   } 
-  // if (total >= 3)  // goal is to only run this if the player hits "hold button"
-  //   totalScore = total;
-  // }
-  // else {
-  //   random.sumScore();
-  // }
+
   console.log("turn score", this.turnScore);
   console.log("Random", random);
 };
@@ -35,35 +33,7 @@ Player.prototype.sumScore = function(){
     total += roll;
 };
   
-  // for (var i = 0; i <= this.turnScore; i ++) {
-  //   var num = this.turnScore[i];
-  //   var total = num + this.totalScore
-  //   this.totalScore = total; 
-  // }
-  // console.log("total score", this.totalScore);
-  // return 
-
-  // this.turnScore.forEach(function(num){
-  //   this.totalScore = this.totalScore + num;
-  // });
-   
-// }
-//   var random = Math.floor(Math.random() * 5) + 1;
-//   var num = random; 
-//   var num1 = parseInt(this.turnScore);
-//   var total = num1; 
-//   this.totalScore = total;  
-//   console.log("total score", this.totalScore)
-// };
-
 // Optional "Game" Construct to keep track of which players turn it is, 
-
-// for Score --->
-// function Score () {
-//   this.currentScore = rollOne + rollTwo; 
-// }
-// Score.prototype.addScore = function() {
-//
 
 // var playerOne = new Player(); 
 // var playerTwo = new Player();
@@ -86,8 +56,7 @@ $(document).ready(function() {
     return playerOne.sumScore();
   });
     console.log("output", output);
-    //   playerOne.rollDice();
-    // });
+    
     
    
    
@@ -100,6 +69,3 @@ $(document).ready(function() {
 
 
 
-//  $('#MyButton').click(function () {
-//       rollDice();
-//     });
