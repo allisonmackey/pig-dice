@@ -29,11 +29,11 @@ Player.prototype.rollDice = function() {
 // "Hold Button" Method --> Adds to the total score
 Player.prototype.sumScore = function(){
   var total = this.totalScore;
-  var roll = this.this.turnScore;
+  var roll = this.turnScore;
     total += roll;
 };
   
-// Optional "Game" Construct to keep track of which players turn it is, 
+// Optional "Game" Construct to keep track of which players turn it is??
 
 // var playerOne = new Player(); 
 // var playerTwo = new Player();
@@ -67,5 +67,11 @@ $(document).ready(function() {
   
 });
 
-
+// Tomorrow!
+// - Get functionality for "Hold Button"/sumScore to work in BL 
+//    - When player presses "hold" display player's total in UI
+//    - Create 4 different outputs in HTML 
+//          1. Display Turn Total for PlayerOne & PlayerTwo
+//          
+//          
 
